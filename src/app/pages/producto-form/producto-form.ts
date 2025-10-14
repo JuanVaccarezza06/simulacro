@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ProductoServicio } from '../../services/producto-servicio';
 
 @Component({
   selector: 'app-producto-form',
@@ -8,19 +9,22 @@ import { Route, Router } from '@angular/router';
   templateUrl: './producto-form.html',
   styleUrl: './producto-form.css'
 })
-export class ProductoForm {
+export class ProductoForm implements OnInit {
 
-  form : FormGroup;
-  id : string;
-  name : FormControl;
-  price : FormControl;
-  category : FormControl;
-  stock : FormControl;
+  form: FormGroup;
+  id: string;
+  name: FormControl;
+  price: FormControl;
+  category: FormControl;
+  stock: FormControl;
+
+  esUpdate: boolean = false;
 
   constructor(
-    private router : Router
-    private route : Route
-  ){
+    private router: Router,
+    private route: ActivatedRoute,
+    private servicio: ProductoServicio
+  ) {
     this.id = "";
     this.name = new FormControl('')
     this.price = new FormControl('')
@@ -28,15 +32,58 @@ export class ProductoForm {
     this.stock = new FormControl('')
 
     this.form = new FormGroup({
-      name : this.name,
-      price : this.price,
-      category : this.category,
-      stock : this.stock
+      name: this.name,
+      price: this.price,
+      category: this.category,
+      stock: this.stock
     })
   }
 
-  validarOperacion(){
-    if(this.router.url.includes("editar")) return this.router
+  // Simplemente verifica si es un update para realizar el patchValue!!
+  ngOnInit(): void { 
+    if (this.router.url.includes("editar")) {
+      this.esUpdate = true;
+      this.id = this.route.snapshot.params['id'];
+      
+
+      this.servicio.getProducto(this.id).subscribe({
+        next: (data) => {
+          this.form.patchValue(data)
+        },
+        error: (e) => {
+          console.log(e);
+        }
+      })
+    }
   }
 
+  // Reedirige segun la operacion!
+  validarOperacion() {
+    if (this.esUpdate) this.realizarPut()
+    else this.realizarPost();
+  }
+
+  realizarPut() {
+
+    let productoForm = this.form.value;
+    productoForm.id = this.id;
+
+    this.servicio.update(productoForm).subscribe({
+      next: (productoActualizado) => {
+        console.log(productoActualizado)
+        this.router.navigate(["/productos"]);
+      },
+      error: (e) => console.log(e)
+    });
+  }
+
+  realizarPost() {
+    this.servicio.post(this.form.value).subscribe({
+      next: (productoCreado) => {
+        console.log(productoCreado)
+        this.router.navigate(["/productos"]);
+      },
+      error: (e) => console.log(e)
+    })
+  }
 }

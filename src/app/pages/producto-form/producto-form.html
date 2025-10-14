@@ -1,23 +1,23 @@
 <article>
-    <form (submit)="validarOperacion()">
+    <form [formGroup]="form" (submit)="validarOperacion()">
         <fieldset>
             <label for="name"></label>
-            <input id="name" type="text" placeholder="example: airpods">
+            <input id="name" type="text" placeholder="example: airpods" formControlName="name">
         </fieldset>
 
         <fieldset>
             <label for="price"></label>
-            <input id="price" type="text" placeholder="example: 69.99">
+            <input id="price" type="text" placeholder="example: 69.99" formControlName="price">
         </fieldset>
 
         <fieldset>
             <label for="category"></label>
-            <input id="category" type="text" placeholder="example: tecnologia">
+            <input id="category" type="text" placeholder="example: tecnologia" formControlName="category">
         </fieldset>
 
         <fieldset>
             <label for="stock"></label>
-            <input id="stock" type="text" placeholder="example: 40">
+            <input id="stock" type="text" placeholder="example: 40" formControlName="stock">
         </fieldset>
 
         <button type="submit">Enviar formulario</button>

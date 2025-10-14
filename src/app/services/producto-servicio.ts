@@ -7,27 +7,37 @@ import { escapeRegExp } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductoServicio{
+export class ProductoServicio {
 
-  public listaProductos : Producto[] = [];
+  public listaProductos: Producto[] = [];
   readonly API_URL = "http://localhost:3000/products"
 
 
   constructor(
-    private http : HttpClient
-  ){
+    private http: HttpClient
+  ) {
   }
 
-  getAll(){
+  getAll() {
     return this.http.get<Producto[]>(this.API_URL);
-  }  
-  
-  delete(id : string){
-    return this.http.delete<Producto>(`${this.API_URL}/${id}`);
-    
   }
 
- 
-  
-  
+  getProducto(id: string) {
+    return this.http.get<Producto>(`${this.API_URL}/${id}`);
+  }
+
+  post(producto : Producto) {
+    return this.http.post<Producto>(this.API_URL,producto);
+  }
+
+  delete(id: string) {
+    return this.http.delete<Producto>(`${this.API_URL}/${id}`);
+  }
+
+  update(productoActualizar: Producto) {
+    return this.http.put<Producto>(`${this.API_URL}/${productoActualizar.id}`, productoActualizar);
+  }
+
+
+
 }
