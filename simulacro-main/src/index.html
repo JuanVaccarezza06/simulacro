@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Simulacro</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+  <!-- 
+  json-server --watch db.json --port 3000
+   -->
+   <!--
+  cd "E:/Carpetas/Tecnicatura Programacion/UTN/4to Cuatri/Programacion IV/Angular/angular-practica/Modelo 2do Parcial/simulacro"
+   -->
+</body>
+</html>
+
+   <!--
+
+
+1) Preguntar si el "operacionFormulario()" es la manera correcta de verificar si se debe mostrar el formulario de 
+put o post.
+
+Respuesta: No, el pensamiento no estuvo mal, pero lo hacemos de manera mas sencilla a traves del id.
+En el ngOnInit, realizamos un this.id = id-de-la-URL, y luego decimos, si este id tiene algo, entonces
+es un PUT.
+
+2) Preguntar si es correcto el uso de el constructor y ngOnInit() (producto-edit)
+
+Respuesta: Esta mal!! En las llaves del constructor, NADA, NADA. Solo inyecciones dentro de los parametros.
+
+3) No pude comprender lo de form builder
+
+Respuesta: 
+
+4) Cuando realizo el post y put, el servicio persiste los cambios en la json base de datos, pero la lista NO
+se refresca, esta se refresca al volver al link!!! Esta bien? Probar con dos ventanas abiertas, una el form y otra 
+la lista. Al eliminar un producto si puedo actualizar ya que al estar en el componente list, tengo acceso a 
+refrescarLista()
+
+Respuesta: No le pregunte, pero es claro que realizar el navigate es correcto, ademas le damos un uso 
+al ngOnInit
+
+5) Esta bien la inyeccion de la lista en el filterList?
+
+Respuesta: Si! No queda otra, siempre que podamos no realizarla, mejor, pero este caso es particular.
+
+HACER EL COMPONENRTE PARA FILTRO Y BUSQUEDA, HACER EL ORDENAMIENTO.
+   -->

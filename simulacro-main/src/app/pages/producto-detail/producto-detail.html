@@ -1,0 +1,15 @@
+<article class="producto-detalle">
+  <h2>{{ producto.name }}</h2>
+
+  <div class="info">
+    <p><strong>Precio:</strong> {{ producto.price }}</p>
+    <p><strong>Categoría:</strong> {{ producto.category }}</p>
+    <p><strong>Stock disponible:</strong> {{ producto.stock }}</p>
+  </div>
+
+  <div class="acciones">
+    <button type="button" (click)="editarProducto(producto.id)">Editar</button>
+    <button type="button" (click)="eliminarProducto(producto.id)">Eliminar</button>
+  </div>
+</article>
+

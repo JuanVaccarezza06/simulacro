@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": "4",
+      "name": "Smartphone Samsung Galaxy A15",
+      "price": 329.99,
+      "stock": 15,
+      "category": "Mobile"
+    },
+    {
+      "id": "5",
+      "name": "Teclado Mecánico HyperX Alloy FPS",
+      "price": 119.99,
+      "stock": 20,
+      "category": "Peripherals"
+    },
+    {
+      "id": "136d",
+      "name": "Compu UTN",
+      "price": "100000",
+      "category": "TECNOLOGIA",
+      "stock": "20"
+    }
+  ]
+}

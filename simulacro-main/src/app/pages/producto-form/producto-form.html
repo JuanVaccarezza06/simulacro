@@ -1,0 +1,39 @@
+<article>
+    <h2> {{id ? 'Editar un producto' : 'Agregar pelicula'}} </h2>
+    <form [formGroup]="form" (submit)="validarOperacion()">
+        @if (name.hasError("required")) {
+            <p>Este campo no puede ser nulo.</p>
+        }
+        <fieldset>
+            <label for="name"></label>
+            <input id="name" type="text" placeholder="example: airpods" formControlName="name">
+        </fieldset>
+   
+        @if (price.hasError("required")) {
+            <p>Este campo no puede ser nulo.</p>
+        } @else if (price.hasError("min") || price.hasError("max")) {
+            <p>Este valor debe estar entre 0 y 500.000</p>
+        }
+        <fieldset>
+            <label for="price"></label>
+            <input id="price" type="text" placeholder="example: 69.99" formControlName="price">
+        </fieldset>
+        @if (category.hasError("required")) {
+            <p>Este campo no puede ser nulo.</p>
+        }
+        <fieldset>
+            <label for="category"></label>
+            <input id="category" type="text" placeholder="example: tecnologia" formControlName="category">
+        </fieldset>
+
+        @if (stock.hasError("required")) {
+            <p>Este campo no puede ser nulo.</p>
+        }
+        <fieldset>
+            <label for="stock"></label>
+            <input id="stock" type="text" placeholder="example: 40" formControlName="stock">
+        </fieldset>
+
+        <button type="submit">Enviar formulario</button>
+    </form>
+</article>

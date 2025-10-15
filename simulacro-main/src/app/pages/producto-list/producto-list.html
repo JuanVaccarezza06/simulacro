@@ -1,0 +1,22 @@
+<article>
+    <h3>Lista de productos</h3>
+    <div id="contenedora-filtro">
+        <app-filter-list></app-filter-list>
+        <div id="contenedora-boton">
+            <button (click)="ordenarLista(true)"> &#9650; </button>
+            <button (click)="ordenarLista(false)">&#9660;</button>   
+        </div>
+    </div>
+    <div id="card">
+        <ul>
+        @for (p of listaProductos; track p.id) {
+            <div>
+                <li> {{p.name}} | {{p.price}} | {{p.category}} | {{p.stock}} </li>
+                <button (click)="editarProducto(p.id)">Editar</button>
+                <button (click)="eliminarProducto(p.id)">Eliminar</button>
+                <button (click)="verDetalle(p.id)">Ver detalle</button>
+            </div>
+        }
+        </ul>
+    </div>
+</article>

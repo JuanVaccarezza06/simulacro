@@ -1,0 +1,40 @@
+header{
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+h1{
+  font-family: 'Segoe UI', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+
+  color: #222;
+  text-align: center;
+  letter-spacing: 1px;
+
+  margin: 1.5rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #0081d7; /* línea elegante debajo */
+  width: fit-content;
+  margin-inline: auto; /* centra horizontalmente */
+
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+a{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.15rem;
+
+    background-color: antiquewhite;
+    color: black;
+    text-decoration: none;
+    border: solid 0.30rem antiquewhite;
+    border-radius: 1rem;
+
+    margin: 1rem;
+    padding: 0.50rem;
+}
+
