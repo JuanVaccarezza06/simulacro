@@ -1,0 +1,60 @@
+.producto-detalle {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #e5e7eb;
+  font-family: system-ui, sans-serif;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 35px rgba(0,0,0,.35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.producto-detalle:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(0,0,0,.45);
+}
+
+.producto-detalle h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.6rem;
+  color: #a5b4fc;
+}
+
+.info p {
+  margin: 8px 0;
+  font-size: 1.05rem;
+}
+
+.info strong {
+  color: #93c5fd;
+}
+
+.acciones {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.acciones button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .15s ease;
+}
+
+.acciones button:first-child {
+  background: linear-gradient(160deg, #6366f1, #8b5cf6 70%);
+}
+.acciones button:last-child {
+  background: linear-gradient(160deg, #f97316, #ef4444 70%);
+}
+.acciones button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}

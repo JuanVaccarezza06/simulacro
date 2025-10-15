@@ -1,60 +1,39 @@
 {
   "products": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Notebook Lenovo IdeaPad 3",
       "price": 459.99,
       "stock": 12,
       "category": "Electronics"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Auriculares Inalámbricos JBL Tune 510BT",
       "price": 89.99,
       "stock": 25,
       "category": "Audio"
     },
     {
+      "id": 3,
       "name": "Silla Gamer Redragon Mantis",
-      "price": "199.",
-      "category": "Furniture",
+      "price": 199.99,
       "stock": 8,
-      "id": "3"
+      "category": "Furniture"
     },
     {
+      "id": 4,
       "name": "Smartphone Samsung Galaxy A15",
       "price": 329.99,
-      "category": "Mobile",
       "stock": 15,
-      "id": "4"
+      "category": "Mobile"
     },
     {
+      "id": 5,
       "name": "Teclado Mecánico HyperX Alloy FPS",
-      "price": "119",
-      "category": "Peripheralssss",
+      "price": 119.99,
       "stock": 20,
-      "id": "5"
-    },
-    {
-      "name": "roberto",
-      "price": "119",
-      "category": "Furniture",
-      "stock": "8",
-      "id": "26d9"
-    },
-    {
-      "name": "Silla Gamer Redragon Mantis",
-      "price": "119",
-      "category": "Furniture",
-      "stock": "asd",
-      "id": "7d15"
-    },
-    {
-      "name": "TELE SAMSUNG",
-      "price": "1000",
-      "category": "TECNOLOGIGA",
-      "stock": "10",
-      "id": "d98f"
+      "category": "Peripherals"
     }
   ]
 }

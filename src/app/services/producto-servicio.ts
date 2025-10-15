@@ -9,9 +9,7 @@ import { escapeRegExp } from '@angular/compiler';
 })
 export class ProductoServicio {
 
-  public listaProductos: Producto[] = [];
   readonly API_URL = "http://localhost:3000/products"
-
 
   constructor(
     private http: HttpClient

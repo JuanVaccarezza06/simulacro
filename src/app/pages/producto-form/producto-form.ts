@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ProductoServicio } from '../../services/producto-servicio';
 
@@ -26,10 +26,10 @@ export class ProductoForm implements OnInit {
     private servicio: ProductoServicio
   ) {
     this.id = "";
-    this.name = new FormControl('')
-    this.price = new FormControl('')
-    this.category = new FormControl('')
-    this.stock = new FormControl('')
+    this.name = new FormControl('',[Validators.required])
+    this.price = new FormControl('',[Validators.required,Validators.min(0),Validators.max(500000)])
+    this.category = new FormControl('',[Validators.required])
+    this.stock = new FormControl('',[Validators.required])
 
     this.form = new FormGroup({
       name: this.name,
