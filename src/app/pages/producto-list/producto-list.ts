@@ -3,10 +3,11 @@ import { ProductoServicio } from '../../services/producto-servicio';
 import { Router } from '@angular/router';
 import { Producto } from '../../models/Producto';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FilterList } from '../../component/filter-list/filter-list';
 
 @Component({
   selector: 'app-producto-list',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,FilterList],
   templateUrl: './producto-list.html',
   styleUrl: './producto-list.css'
 })
@@ -56,15 +57,5 @@ export class ProductoList implements OnInit {
     return this.router.navigate(['productos', id]);
   }
 
-  buscarPorFiltro() {
 
-    let lista = this.listaProductos.filter(p => 
-      p.name.toLowerCase().includes(this.filtro.value.toLowerCase()) ||
-      p.category.toLowerCase().includes(this.filtro.value.toLowerCase())  
-    );
-
-    if (lista) {
-      this.listaProductos = lista;
-    }    
-  }
 }

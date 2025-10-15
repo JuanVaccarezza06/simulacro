@@ -1,21 +1,6 @@
 <article>
     <h3>Lista de productos</h3>
-    <form class="search-form" [formGroup]="buscador">
-      <label for="search" class="visually-hidden"></label>
-      <input 
-        id="search"
-        name="search"
-        type="search"
-        placeholder="Buscar productos…"
-        autocomplete="off"
-        enterkeyhint="search"
-        aria-label="Buscar"
-        formControlName="filtro"
-      />
-
-      <button id="button-search" type="button" (click)="buscarPorFiltro()">Buscar</button>
-      <button id="button-refrescar" type="button" (click)="refrescarLista()" >Sacar filtro</button>
-    </form>
+    <app-filter-list></app-filter-list>
     <div id="card">
         <ul>
         @for (p of listaProductos; track p.id) {

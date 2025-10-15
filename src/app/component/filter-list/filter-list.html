@@ -1,0 +1,7 @@
+<form class="search-form" [formGroup]="formFilter">
+      <label for="search" class="visually-hidden"></label>
+      <input id="search" placeholder="Buscar productos…" formControlName="filter" />
+
+      <button id="button-search" type="button" (click)="buscarPorFiltro()">Buscar</button>
+      <button id="button-refrescar" type="button" (click)="refrescarLista()" >Sacar filtro</button>
+</form>
